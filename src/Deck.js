@@ -25,7 +25,6 @@ class Deck extends Component {
         if (!data.success) alert("No more cards");
         else {
           let card = data.cards[0];
-          console.log(data);
           this.setState((st) => ({
             drawnCards: [
               ...st.drawnCards,
@@ -41,10 +40,14 @@ class Deck extends Component {
   }
 
   render() {
+    let cards = this.state.drawnCards.map((card) => (
+      <Card image={card.image} alt={card.alt} key={card.id} />
+    ));
     return (
       <div>
         <h1>Cards Dealer</h1>
         <button onClick={this.getCard}>Get a card !</button>
+        <div>{cards}</div>
       </div>
     );
   }
