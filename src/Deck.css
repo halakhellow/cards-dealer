@@ -1,6 +1,7 @@
 .Deck-nocards,
 .Deck-title {
     color: #edddd4;
+    font-family: 'IBM Plex Serif', serif;
 }
 
 .Deck-title {
@@ -17,6 +18,7 @@
     color: #edddd4;
     outline: none;
     transition: .25s;
+    font-family: 'IBM Plex Serif', serif;
 }
 
 .Deck-btn:hover {
