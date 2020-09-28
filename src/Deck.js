@@ -47,11 +47,13 @@ class Deck extends Component {
     return (
       <div>
         {this.state.outOfCards ? (
-          <h1>No More Cards!</h1>
+          <h1 className="Deck-nocards">NO MORE CARDS!</h1>
         ) : (
           <div>
-            <h1>Cards Dealer</h1>
-            <button onClick={this.getCard}>Get a card !</button>
+            <h1 className="Deck-title">♠️ CARDS DEALER ♠️</h1>
+            <button className="Deck-btn" onClick={this.getCard}>
+              Get a card !
+            </button>
           </div>
         )}
         <div className="Deck-cards">{cards}</div>
