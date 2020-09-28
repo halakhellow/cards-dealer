@@ -4,7 +4,7 @@ import Card from "./Card";
 class Deck extends Component {
   constructor(props) {
     super(props);
-    this.state = { deck: null, drawnCards: [] };
+    this.state = { deck: null, drawnCards: [], outOfCards: false };
     this.getCard = this.getCard.bind(this);
   }
 
@@ -22,7 +22,7 @@ class Deck extends Component {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (!data.success) alert("No more cards");
+        if (!data.success) this.setState({ outOfCards: true });
         else {
           let card = data.cards[0];
           this.setState((st) => ({
@@ -43,7 +43,9 @@ class Deck extends Component {
     let cards = this.state.drawnCards.map((card) => (
       <Card image={card.image} alt={card.alt} key={card.id} />
     ));
-    return (
+    return this.state.outOfCards ? (
+      <h1>No More Cards!</h1>
+    ) : (
       <div>
         <h1>Cards Dealer</h1>
         <button onClick={this.getCard}>Get a card !</button>
