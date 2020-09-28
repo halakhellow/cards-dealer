@@ -1,3 +1,30 @@
+.Deck-nocards,
+.Deck-title {
+    color: #edddd4;
+}
+
+.Deck-title {
+    letter-spacing: 5px;
+}
+
+.Deck-btn {
+    width: 7rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 3px solid #edddd4;
+    background-color: #283D3B;
+    color: #edddd4;
+    outline: none;
+    transition: .25s;
+}
+
+.Deck-btn:hover {
+    color: #283D3B;
+    background-color: #edddd4;
+    border-color: #283D3B;
+}
+
 .Deck-cards {
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
